@@ -11,4 +11,9 @@ public abstract class Duck {
 		fly.fly();
 	}
 	public abstract void display();
+	
+	public void setFly(Fly fly){
+		this.fly = fly;
+	}
+	
 }

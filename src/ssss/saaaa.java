@@ -3,11 +3,13 @@ package ssss;
 public class saaaa extends Duck{
 	
 	saaaa(){
-		 fly = new CanFly();
+//		 fly = new CanFly();
 	}
 	public static void main(String[] args) {
 		saaaa a = new saaaa();
 		a.display();
+//		a.performfly();
+		a.setFly(new NoFly());
 		a.performfly();
 	}
 	@Override
