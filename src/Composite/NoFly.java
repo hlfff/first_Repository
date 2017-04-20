@@ -1,4 +1,4 @@
-package Composite;
+package composite;
 
 public class NoFly implements Fly{
 

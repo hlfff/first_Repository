@@ -1,4 +1,4 @@
-package Composite;
+package composite;
 
 public class saaaa extends Duck{
 	
