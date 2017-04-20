@@ -1,4 +1,4 @@
-package ssss;
+package Composite;
 
 public abstract class Duck {
 	Fly fly;

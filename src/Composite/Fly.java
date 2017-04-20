@@ -1,4 +1,4 @@
-package ssss;
+package Composite;
 
 public interface Fly {
 	public void fly();
