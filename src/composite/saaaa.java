@@ -1,4 +1,4 @@
-package Composite;
+package composite;
 
 public class saaaa extends Duck{
 	
@@ -9,7 +9,6 @@ public class saaaa extends Duck{
 		saaaa a = new saaaa();
 		a.display();
 //		a.performfly();
-		//可以动态设置飞行模式。
 		a.setFly(new NoFly());
 		a.performfly();
 	}

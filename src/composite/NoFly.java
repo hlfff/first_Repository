@@ -1,5 +1,5 @@
-package Composite;
-//不可以飞行模式，实现Fly接口，多态。
+package composite;
+
 public class NoFly implements Fly{
 
 	@Override

@@ -1,5 +1,5 @@
-package Composite;
-//可以飞行模式，实现Fly接口，多态。
+package composite;
+
 public class CanFly implements Fly{
 
 	@Override
