@@ -8,7 +8,7 @@ public class Coffee {
 		Beverage beverage = new Espresso();
 		System.out.println(beverage.getDescription() + "价格：" + beverage.cost());
 		
-		//给被观察者添加观察者。
+		//给被装饰着添加装饰者。
 		Beverage beverage2 = new HouseBlend();
 		beverage2 = new Mocha(beverage2);
 		beverage2 = new Soy(beverage2);
