@@ -35,6 +35,7 @@ public class WeatherData extends Observable{
 //		
 //	}
 	public void measurementsChanged(){
+		//java内置的观察者模式，需要调用此方法，通知需要改变，才能去通知观察者更新数据，此方法在我们需要改变时调用，增加灵活性
 		setChanged();
 		notifyObservers();
 //		notifyChange();
