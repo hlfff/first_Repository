@@ -1,4 +1,4 @@
-package composite;
+package strategy;
 
 public abstract class Duck {
 	Fly fly;

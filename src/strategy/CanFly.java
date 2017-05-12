@@ -1,4 +1,4 @@
-package composite;
+package strategy;
 
 public class CanFly implements Fly{
 

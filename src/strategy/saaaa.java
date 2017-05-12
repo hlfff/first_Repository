@@ -1,4 +1,4 @@
-package composite;
+package strategy;
 
 public class saaaa extends Duck{
 	
@@ -6,7 +6,7 @@ public class saaaa extends Duck{
 //		 fly = new CanFly();
 	}
 	public static void main(String[] args) {
-		saaaa a = new saaaa();
+		Duck a = new saaaa();
 		a.display();
 //		a.performfly();
 		a.setFly(new NoFly());
