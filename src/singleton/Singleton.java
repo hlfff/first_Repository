@@ -5,6 +5,7 @@ public class Singleton {
 	
 	
 	//单例模式需要将构造方法声明为私有的，这样，在其他类中，就不能通过new来实例化该对象
+	//test
 	private Singleton(){}
 	//懒汉式，线程不安全，如果同时有多个线程同时访问，对象会错乱
 	private static Singleton getinstance(){
