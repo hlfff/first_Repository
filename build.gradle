@@ -1,0 +1,67 @@
+
+plugins {
+    id 'com.android.library'
+}
+
+
+//是否是对外的产品
+def isExternal = true
+def adDomain = isExternal ?
+        "\"https://ab.biddingwin.com/openrtb2/auction\"" : "\"https://ab.ferngrowth.com/openrtb2/auction\""
+def IDENTIFY = isExternal ? "\"external_mediation\"" : "\"juzhuan_mediation\""
+
+ext {
+    SDK_VN = '4.6.39.5'
+}
+
+android {
+    compileSdkVersion 30
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 30
+
+        project.archivesBaseName = "Module-biddingwin"
+        buildConfigField "java.lang.String", "VERSION_NAME", "\"${project.ext.SDK_VN}\""
+        consumerProguardFiles "consumer-rules.pro"
+        buildConfigField "java.lang.String", "AD_DOMAIN", "${adDomain}"
+        buildConfigField "java.lang.String", "IDENTIFY", "${IDENTIFY}"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFile 'consumer-rules.pro'
+            android.libraryVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "BiddingwinSDK.${project.ext.SDK_VN}.aar"
+                }
+
+            }
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.aar'])
+    compileOnly fileTree(dir: 'aars', include: ['*.aar'])
+
+    implementation 'androidx.core:core:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    testImplementation 'junit:junit:4.+'
+    implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+    implementation 'androidx.annotation:annotation:1.3.0'
+    implementation 'com.google.android.gms:play-services-base:18.1.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.15.1'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.15.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+}
